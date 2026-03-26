@@ -1,0 +1,9 @@
+{
+  "name": "Legend",
+  "version": "1.0.0",
+  "description": "Display a standalone legend to identify colors used by other charts on a sheet. Use a categorical legend to label dimension values, or a gradient legend to show the range of a measure. Combine with an expression to apply custom colors across multiple visualizations.",
+  "author": "QlikTech International AB",
+  "icon": "list",
+  "type": "visualization",
+  "supernova": true
+}

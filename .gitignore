@@ -1,0 +1,7 @@
+node_modules/
+dist/
+core/esm/
+coverage/
+bundle-analysis.html
+*.log
+.pnpm-debug.log

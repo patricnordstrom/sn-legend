@@ -1,0 +1,6 @@
+{
+  "name": "@qlik-trial/encoder",
+  "version": "1.4.1",
+  "description": "Stub for @qlik-trial/encoder (unused by sn-legend)",
+  "main": "index.js"
+}

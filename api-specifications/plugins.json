@@ -1,0 +1,87 @@
+{
+  "scriptappy": "1.1.3",
+  "info": {
+    "name": "@nebula.js/sn-legend:plugins",
+    "description": "Legend chart plugins API definitions",
+    "version": "1.0.0",
+    "license": "MIT",
+    "stability": "experimental",
+    "x-qlik-visibility": "public"
+  },
+  "entries": {
+    "pluginArguments": {
+      "description": "The arguments that are passed to the `fn` function of the plugin definition.",
+      "kind": "namespace",
+      "entries": {
+        "keys": {
+          "description": "The keys (references) to different types of chart internals.",
+          "kind": "object",
+          "entries": {
+            "COMPONENT": {
+              "description": "The unique keys of the existing components available in the legend chart.\nUseful if you want to extend or override existing components.",
+              "kind": "object",
+              "entries": {
+                "LEGEND": {
+                  "description": "The categorical legend component (`legend-cat`). Present when `color.mode` is `\"byDimension\"` or when `color.mode` is `\"byExpression\"` with `legend.expressionTarget=\"dimension\"`.",
+                  "defaultValue": "legend",
+                  "type": "string"
+                },
+                "LEGEND_SEQ": {
+                  "description": "The sequential gradient legend component (`legend-seq`). Present when `color.mode` is `\"byMeasure\"` or when `color.mode` is `\"byExpression\"` with `legend.expressionTarget=\"measure\"`.",
+                  "defaultValue": "legend",
+                  "type": "string"
+                },
+                "BRUSH_LEGEND_RANGE": {
+                  "description": "The brush-range interaction overlay for the sequential legend. Enables range selections on the gradient legend.",
+                  "defaultValue": "legendRangeBrush",
+                  "type": "string"
+                }
+              }
+            },
+            "SCALE": {
+              "description": "The scales associated with the legend chart.\nUseful if you want to add a component that uses the same scale.",
+              "kind": "object",
+              "entries": {
+                "FILL": {
+                  "description": "The primary fill color scale. For `byDimension` and `byMeasure` modes this is the color service scale. For `byExpression+measure` this is a `sequential-color` scale built from expression values.",
+                  "defaultValue": "fill",
+                  "type": "string"
+                },
+                "FILL_RANGE": {
+                  "description": "The range scale for the sequential gradient legend. Maps measure values to the gradient extent. Present when `color.mode` is `\"byMeasure\"` or `\"byExpression\"` with `legend.expressionTarget=\"measure\"`.",
+                  "defaultValue": "fillRange",
+                  "type": "string"
+                },
+                "LEGEND_EXPR_FILL": {
+                  "description": "A categorical fill scale built from expression color values. Present when `color.mode` is `\"byExpression\"` with `legend.expressionTarget=\"dimension\"`. Extracts colors from `qDimensionInfo/0` attribute expressions.",
+                  "defaultValue": "legendExprFill",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "layout": {
+          "description": "The layout from the enigma model.",
+          "type": "object"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "getPluginArgs": {
+      "description": "Prepare important chart internals for the users to build their own plugins.",
+      "kind": "function",
+      "params": [
+        {
+          "name": "layoutService",
+          "type": "object"
+        }
+      ],
+      "returns": {
+        "description": "Chart internals that will be exposed to the users.",
+        "type": "#/entries/pluginArguments"
+      }
+    }
+  }
+}
