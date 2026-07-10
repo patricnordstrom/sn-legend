@@ -113,6 +113,18 @@ When coloring by dimension, each legend item displays a colored symbol. Availabl
 }
 ```
 
+## Size
+
+New standalone Nebula.js object. Line counts of what's actually authored — excludes the generated lockfile (~10.8k lines), `api-specifications/` (964), and the built `sn-legend-ext/` bundle:
+
+| Category | Files | Lines |
+|---|---|---|
+| Source (`src/`, excl. tests) | 30 | 2,102 |
+| Unit tests | 9 | 1,085 |
+| **Authored total** | **39** | **3,187** |
+
+Largest areas: `src/interactions/` (11 files), `src/services/` (6), `src/ext/` property panel (5), plus `components/`, `qae/`, and the picasso definition.
+
 ## License
 
 MIT
